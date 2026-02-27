@@ -13,18 +13,12 @@ on:
                 default: '/'
 
 env:
-    POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
-    BETTER_AUTH_URL: http://localhost:4321
-    BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
-    GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-    GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-    GITHUB_CLIENT_ID: ${{ secrets.GH_OAUTH_CLIENT_ID }}
-    GITHUB_CLIENT_SECRET: ${{ secrets.GH_OAUTH_CLIENT_SECRET }}
+    DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_CLERK_PUBLISHABLE_KEY }}
+    CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
-    EXA_SEARCH_API_KEY: ${{ secrets.EXA_SEARCH_API_KEY }}
-    UPLOADTHING_TOKEN: ${{ secrets.UPLOADTHING_TOKEN }}
-    USER_ACCESS_TOKEN: ${{ secrets.USER_ACCESS_TOKEN }}
+    EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
     BROWSER_TEST_PATH: ${{ github.event.inputs.browser_test_path || '/' }}
 
 jobs:

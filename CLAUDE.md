@@ -30,10 +30,10 @@ Database commands should be run from the `app/` directory:
 ```bash
 cd app
 
-npm run db:push          # Push schema changes to database (no migrations)
-npm run db:generate      # Generate migration files from schema
-npm run db:migrate       # Apply pending migrations
-npm run db:studio        # Open Drizzle Studio GUI for database
+npx drizzle-kit push          # Push schema changes to database (no migrations)
+npx drizzle-kit generate      # Generate migration files from schema
+npx drizzle-kit migrate       # Apply pending migrations
+npx drizzle-kit studio        # Open Drizzle Studio GUI for database
 ```
 
 ## Architecture Overview

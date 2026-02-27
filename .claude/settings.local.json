@@ -4,7 +4,8 @@
       "Bash(node -e:*)",
       "Bash(git mv:*)",
       "Bash(git add:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
