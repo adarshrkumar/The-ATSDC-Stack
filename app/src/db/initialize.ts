@@ -1,14 +1,15 @@
-import { sql } from '@vercel/postgres';
-import { drizzle } from 'drizzle-orm/vercel-postgres';
+import { neon } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-http';
 import * as schema from './schema';
 import { posts, comments } from './schema';
 
 /**
  * Database client configuration
- * Uses Vercel Postgres for production-ready connection pooling
+ * Uses Neon serverless for production-ready connection pooling
  */
 
 // Create Drizzle instance with schema
+const sql = neon(process.env.DATABASE_URL!);
 export const db = drizzle(sql, { schema });
 
 // Export schema for convenience
