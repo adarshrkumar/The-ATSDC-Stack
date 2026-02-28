@@ -331,13 +331,38 @@ export const POST: APIRoute = async ({ request }) => {
 
 ## 🔐 Authentication
 
-Clerk is pre-configured for authentication. Protect routes with middleware:
+BetterAuth is pre-configured for authentication. Set up auth and protect routes:
+
+```typescript
+// src/lib/auth.ts
+import { betterAuth } from 'better-auth';
+import { drizzleAdapter } from 'better-auth/adapters/drizzle';
+import { db } from '@/db/initialize';
+
+export const auth = betterAuth({
+    database: drizzleAdapter(db, { provider: 'pg' }),
+    emailAndPassword: { enabled: true },
+});
+```
+
+```typescript
+// src/pages/api/auth/[...all].ts
+import type { APIRoute } from 'astro';
+import { auth } from '@/lib/auth';
+
+export const ALL: APIRoute = ({ request }) => auth.handler(request);
+```
 
 ```typescript
 // src/middleware.ts
-import { clerkMiddleware } from '@clerk/astro/server';
+import { auth } from '@/lib/auth';
+import { defineMiddleware } from 'astro:middleware';
 
-export const onRequest = clerkMiddleware();
+export const onRequest = defineMiddleware(async (context, next) => {
+    const session = await auth.api.getSession({ headers: context.request.headers });
+    context.locals.user = session?.user ?? null;
+    return next();
+});
 ```
 
 ## 🚀 Deployment
@@ -359,14 +384,15 @@ npx vercel --prod
 Set these in your Vercel project settings:
 
 - `DATABASE_URL`
-- `CLERK_SECRET_KEY`
+- `BETTER_AUTH_SECRET`
+- `BETTER_AUTH_URL`
 - `OPENAI_API_KEY`
 
 ## 📚 Documentation
 
 - [Astro Documentation](https://docs.astro.build)
 - [Drizzle ORM Documentation](https://orm.drizzle.team/docs)
-- [Clerk Documentation](https://clerk.com/docs)
+- [BetterAuth Documentation](https://betterauth.dev/docs)
 - [Zero Sync Documentation](https://zero.rocicorp.dev)
 - [Zod Documentation](https://zod.dev)
 - [Vercel AI SDK Documentation](https://sdk.vercel.ai/docs)
@@ -398,7 +424,7 @@ Contributions are welcome! Please open an issue or submit a pull request.
 3. **Real-time Sync** - Zero provides local-first data synchronization for responsive UIs
 4. **Developer Experience** - Modern tooling with excellent IDE support and automated setup
 5. **Scalability** - PostgreSQL + serverless architecture scales effortlessly
-6. **Security** - Clerk handles authentication, Zod validates inputs
+6. **Security** - BetterAuth handles authentication, Zod validates inputs
 7. **AI-Ready** - Vercel AI SDK integration for modern AI features
 8. **PWA Support** - Offline-first capabilities with Vite PWA
 9. **Clean Architecture** - Enforced separation of concerns, especially for styles
