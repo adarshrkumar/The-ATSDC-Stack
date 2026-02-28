@@ -17,7 +17,7 @@ export const posts = pgTable('posts', {
     content: text('content').notNull(),
     excerpt: text('excerpt'),
 
-    // Author information (Clerk user ID)
+    // Author information (BetterAuth user ID)
     authorId: varchar('author_id', { length: 255 }).notNull(),
     authorName: varchar('author_name', { length: 255 }),
 
@@ -52,7 +52,7 @@ export const comments = pgTable('comments', {
     // Comment content
     content: text('content').notNull(),
 
-    // Author information (Clerk user ID)
+    // Author information (BetterAuth user ID)
     authorId: varchar('author_id', { length: 255 }).notNull(),
     authorName: varchar('author_name', { length: 255 }),
 
