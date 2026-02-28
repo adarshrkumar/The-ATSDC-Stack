@@ -1,6 +1,6 @@
 {
     "name": "create-atsdc-stack",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "ATSDC Stack - Astro, TypeScript, SCSS, Drizzle, Clerk CLI utility",
     "type": "module",
     "bin": {
