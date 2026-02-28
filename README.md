@@ -10,7 +10,7 @@ The **ATSDC Stack** is a carefully curated combination of modern web technologie
 - **T** - [TypeScript](https://www.typescriptlang.org) - Full type safety across your entire application
 - **S** - [SCSS](https://sass-lang.com) - Powerful styling with variables, mixins, and modules
 - **D** - [Drizzle ORM](https://orm.drizzle.team) - Type-safe database operations with PostgreSQL
-- **C** - [Clerk](https://clerk.com) - Complete authentication and user management
+- **C** - [BetterAuth](https://betterauth.dev) - Complete authentication and user management
 
 ### Additional Technologies
 
@@ -75,8 +75,8 @@ cp .env.example .env
 Required environment variables:
 
 - `DATABASE_URL` - PostgreSQL connection string
-- `PUBLIC_CLERK_PUBLISHABLE_KEY` - Clerk publishable key
-- `CLERK_SECRET_KEY` - Clerk secret key
+- `BETTER_AUTH_SECRET` - BetterAuth secret key (min 32 chars)
+- `BETTER_AUTH_URL` - App URL for BetterAuth (e.g. http://localhost:4321)
 - `OPENAI_API_KEY` - OpenAI API key (for AI features)
 
 ### 2. Database Setup
