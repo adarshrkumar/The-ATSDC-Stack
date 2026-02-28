@@ -342,7 +342,8 @@ vercel --prod
 
 ```bash
 vercel env add DATABASE_URL
-vercel env add CLERK_SECRET_KEY
+vercel env add BETTER_AUTH_SECRET
+vercel env add BETTER_AUTH_URL
 vercel env add OPENAI_API_KEY
 ```
 

@@ -167,7 +167,6 @@ function generateAstroConfig(adapter, integrations = []) {
         vercel: `import { defineConfig } from 'astro/config';
 ${integrationImports}
 import vercel from '@astrojs/vercel';
-import clerk from '@clerk/astro';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
@@ -250,7 +249,6 @@ ${integrationCalls}
         netlify: `import { defineConfig } from 'astro/config';
 ${integrationImports}
 import netlify from '@astrojs/netlify';
-import clerk from '@clerk/astro';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
@@ -326,7 +324,6 @@ ${integrationCalls}
         cloudflare: `import { defineConfig} from 'astro/config';
 ${integrationImports}
 import cloudflare from '@astrojs/cloudflare';
-import clerk from '@clerk/astro';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
@@ -402,7 +399,6 @@ ${integrationCalls}
         node: `import { defineConfig } from 'astro/config';
 ${integrationImports}
 import node from '@astrojs/node';
-import clerk from '@clerk/astro';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
@@ -479,7 +475,6 @@ ${integrationCalls}
 `,
         static: `import { defineConfig } from 'astro/config';
 ${integrationImports}
-import clerk from '@clerk/astro';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
