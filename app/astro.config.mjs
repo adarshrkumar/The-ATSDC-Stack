@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
-import clerk from '@clerk/astro';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // https://astro.build/config
@@ -17,10 +16,6 @@ export default defineConfig({
     },
     integrations: [
         react(),
-        clerk({
-            afterSignInUrl: '/',
-            afterSignUpUrl: '/',
-        }),
     ],
     vite: {
         plugins: [
