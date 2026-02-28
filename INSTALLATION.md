@@ -317,7 +317,7 @@ npm install
 1. Review the [README.md](./README.md) for architecture details
 2. Explore the example code in `src/pages/api/`
 3. Customize your database schema in `src/db/schema.ts`
-4. Set up your Clerk authentication
+4. Set up your BetterAuth authentication
 5. Deploy to Vercel
 
 ## Production Deployment
