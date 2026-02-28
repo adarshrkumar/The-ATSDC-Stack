@@ -970,8 +970,8 @@ ${colors.bright}${colors.green}NEXT STEPS AFTER CREATION${colors.reset}
 
     ${colors.yellow}2.${colors.reset} Configure environment variables in ${colors.cyan}.env${colors.reset}:
      • DATABASE_URL              - PostgreSQL connection string
-     • PUBLIC_CLERK_PUBLISHABLE_KEY - Get from clerk.com
-     • CLERK_SECRET_KEY          - Get from clerk.com
+     • BETTER_AUTH_SECRET        - Random secret (min 32 chars)
+     • BETTER_AUTH_URL           - Your app URL
      • OPENAI_API_KEY            - Get from platform.openai.com
      • EXA_API_KEY               - Get from exa.ai (optional)
 
@@ -993,7 +993,7 @@ ${colors.bright}${colors.green}RESOURCES${colors.reset}
     ${colors.cyan}Documentation:${colors.reset}
     • Astro:        https://docs.astro.build
     • Drizzle ORM:  https://orm.drizzle.team
-    • Clerk:        https://clerk.com/docs
+    • BetterAuth:   https://betterauth.dev/docs
     • Zod:          https://zod.dev
     • Vercel AI:    https://sdk.vercel.ai/docs
     • Exa Search:   https://docs.exa.ai
