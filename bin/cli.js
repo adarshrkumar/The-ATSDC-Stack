@@ -569,7 +569,7 @@ async function setupDatabase(projectDir) {
         }
 
         // Try to run drizzle-kit push
-        execSync('npm run db:push', {
+        execSync('npx drizzle-kit push', {
             cwd: projectDir,
             stdio: 'inherit',
         });
@@ -578,7 +578,7 @@ async function setupDatabase(projectDir) {
         return true;
     } catch (error) {
         logError('Failed to push database schema');
-        logWarning('Please configure your DATABASE_URL in .env and run: npm run db:push');
+        logWarning('Please configure your DATABASE_URL in .env and run: npx drizzle-kit push');
         console.log(`\nError details: ${error.message}`);
         return false;
     }
