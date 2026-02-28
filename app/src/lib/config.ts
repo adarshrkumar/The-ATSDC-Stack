@@ -23,7 +23,7 @@ export const siteConfig = {
      * Full description of the stack
      */
     stackDescription:
-        'Full-stack application built with Astro, TypeScript, Drizzle, Clerk, and SCSS',
+        'Full-stack application built with Astro, TypeScript, Drizzle, BetterAuth, and SCSS',
 
     /**
      * Docs URL
