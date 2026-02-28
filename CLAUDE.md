@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-The ATSDC Stack is a full-stack web application framework built with Astro, TypeScript, SCSS, Drizzle ORM, and Clerk. It's designed as both a production-ready template and a CLI tool for scaffolding new projects.
+The ATSDC Stack is a full-stack web application framework built with Astro, TypeScript, SCSS, Drizzle ORM, and BetterAuth. It's designed as both a production-ready template and a CLI tool for scaffolding new projects.
 
 This is a monorepo with two main parts:
 
@@ -53,7 +53,7 @@ npx drizzle-kit studio        # Open Drizzle Studio GUI for database
 - All IDs are `varchar(21)` with `.$defaultFn(() => nanoid())`
 - TypeScript types are inferred: `typeof posts.$inferSelect` and `typeof posts.$inferInsert`
 - Zod validation schemas mirror database schemas but add runtime validation
-- Use `@vercel/postgres` for connection pooling, wrapped by Drizzle
+- Use `@neondatabase/serverless` for connection pooling, wrapped by Drizzle
 
 ### API Routes
 
@@ -151,12 +151,12 @@ import { posts } from '@/db/schema';
 import '@/styles/components/card.scss';
 ```
 
-### Authentication (Clerk)
+### Authentication (BetterAuth)
 
-- Pre-configured in `app/astro.config.mjs`
-- Middleware: Create `app/src/middleware.ts` with `clerkMiddleware()` to protect routes
+- Configured via `app/src/lib/auth.ts` using the `better-auth` package
+- Auth API routes at `app/src/pages/api/auth/[...all].ts`
+- Middleware: Create `app/src/middleware.ts` using `auth.api.getSession()` to protect routes
 - User IDs stored as `authorId` in database (varchar 255)
-- React components available via `@clerk/clerk-react`
 
 ### Progressive Web App (PWA)
 
@@ -170,8 +170,8 @@ import '@/styles/components/card.scss';
 **Required:**
 
 - `DATABASE_URL` - PostgreSQL connection string
-- `PUBLIC_CLERK_PUBLISHABLE_KEY` - Clerk publishable key
-- `CLERK_SECRET_KEY` - Clerk secret key
+- `BETTER_AUTH_SECRET` - BetterAuth secret key (min 32 chars)
+- `BETTER_AUTH_URL` - App URL for BetterAuth (e.g. http://localhost:4321)
 - `OPENAI_API_KEY` - OpenAI API key (for AI features)
 
 **Setup:** Copy `.env.example` to `.env` and fill in values
@@ -179,7 +179,7 @@ import '@/styles/components/card.scss';
 ## Key Design Decisions
 
 1. **NanoID over UUID/auto-increment:** URL-safe, shorter, equally collision-resistant
-2. **Vercel Postgres over node-postgres:** Better connection pooling for serverless
+2. **Neon Serverless over node-postgres:** Better connection pooling for serverless/edge
 3. **Drizzle over Prisma:** Closer to SQL, better TypeScript inference, lighter weight
 4. **Zod validation separate from schema:** Allows different validation rules for create/update operations
 5. **SCSS over Tailwind:** Enforces semantic naming, better for large teams and maintainability

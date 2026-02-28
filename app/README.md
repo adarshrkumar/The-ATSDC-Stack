@@ -8,7 +8,7 @@ This is the main Astro application for the ATSDC Stack.
 
 - Node.js >= 18.0.0
 - PostgreSQL database (Vercel Postgres, Neon, or local)
-- API keys for Clerk, OpenAI, and optionally Exa
+- API keys for BetterAuth, OpenAI, and optionally Exa
 
 ### Installation
 
@@ -30,9 +30,9 @@ Create a `.env` file with the following variables:
 # Database
 DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
 
-# Clerk Authentication
-PUBLIC_CLERK_PUBLISHABLE_KEY="pk_test_..."
-CLERK_SECRET_KEY="sk_test_..."
+# BetterAuth
+BETTER_AUTH_SECRET="your-secret-key-min-32-chars"
+BETTER_AUTH_URL="http://localhost:4321"
 
 # OpenAI (for Vercel AI SDK)
 OPENAI_API_KEY="sk-..."
@@ -154,13 +154,17 @@ export const createPostSchema = z.object({
 
 ## 🔐 Authentication
 
-Authentication is handled by Clerk. Configure in `astro.config.mjs`:
+Authentication is handled by BetterAuth. Configure in `src/lib/auth.ts`:
 
-```javascript
-clerk({
-    afterSignInUrl: '/',
-    afterSignUpUrl: '/',
-})
+```typescript
+import { betterAuth } from 'better-auth';
+import { drizzleAdapter } from 'better-auth/adapters/drizzle';
+import { db } from '@/db/initialize';
+
+export const auth = betterAuth({
+    database: drizzleAdapter(db, { provider: 'pg' }),
+    emailAndPassword: { enabled: true },
+});
 ```
 
 ## 🤖 AI Features
@@ -204,8 +208,8 @@ vercel
 Make sure to set these environment variables in your Vercel project settings:
 
 - `DATABASE_URL`
-- `PUBLIC_CLERK_PUBLISHABLE_KEY`
-- `CLERK_SECRET_KEY`
+- `BETTER_AUTH_SECRET`
+- `BETTER_AUTH_URL`
 - `OPENAI_API_KEY`
 - `EXA_API_KEY` (optional)
 
@@ -213,7 +217,7 @@ Make sure to set these environment variables in your Vercel project settings:
 
 - [Astro Documentation](https://docs.astro.build)
 - [Drizzle ORM](https://orm.drizzle.team)
-- [Clerk](https://clerk.com/docs)
+- [BetterAuth](https://betterauth.dev/docs)
 - [Vercel AI SDK](https://sdk.vercel.ai/docs)
 - [Zod](https://zod.dev)
 - [Exa Search](https://docs.exa.ai)

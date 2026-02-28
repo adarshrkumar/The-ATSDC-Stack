@@ -53,7 +53,7 @@ npm install better-auth@latest
 ### Database (Drizzle ORM + PostgreSQL)
 
 ```bash
-npm install drizzle-orm@latest postgres@latest @vercel/postgres@latest
+npm install drizzle-orm@latest @neondatabase/serverless@latest
 npm install -D drizzle-kit@latest
 ```
 
