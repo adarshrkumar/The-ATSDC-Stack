@@ -44,10 +44,10 @@ npm install astro@latest typescript@latest
 npm install @astrojs/react@latest @astrojs/vercel@latest @astrojs/check@latest
 ```
 
-### Authentication (Clerk)
+### Authentication (BetterAuth)
 
 ```bash
-npm install @clerk/astro@latest @clerk/clerk-react@latest
+npm install better-auth@latest
 ```
 
 ### Database (Drizzle ORM + PostgreSQL)
@@ -87,7 +87,7 @@ npm install nanoid@latest
 npm install -D vite-plugin-pwa@latest @vite-pwa/assets-generator@latest
 ```
 
-### React Dependencies (for Clerk components)
+### React Dependencies
 
 ```bash
 npm install react@latest react-dom@latest
@@ -110,9 +110,8 @@ npm install \
   @astrojs/react@latest \
   @astrojs/vercel@latest \
   @astrojs/check@latest \
-  @clerk/astro@latest \
-  @clerk/clerk-react@latest \
-  @vercel/postgres@latest \
+  @neondatabase/serverless@latest \
+  better-auth@latest \
   ai@latest \
   @ai-sdk/openai@latest \
   drizzle-orm@latest \
