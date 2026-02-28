@@ -190,13 +190,12 @@ cat > astro.config.mjs << 'EOF'
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel/serverless';
-import clerk from '@clerk/astro';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   output: 'server',
   adapter: vercel(),
-  integrations: [react(), clerk()],
+  integrations: [react()],
   vite: {
     plugins: [VitePWA({ registerType: 'autoUpdate' })],
   },
@@ -209,8 +208,8 @@ EOF
 ```bash
 cat > .env.example << 'EOF'
 DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
-PUBLIC_CLERK_PUBLISHABLE_KEY="pk_test_..."
-CLERK_SECRET_KEY="sk_test_..."
+BETTER_AUTH_SECRET="your-secret-key-min-32-chars"
+BETTER_AUTH_URL="http://localhost:4321"
 OPENAI_API_KEY="sk-..."
 EOF
 ```
