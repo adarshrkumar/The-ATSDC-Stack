@@ -171,7 +171,7 @@ import '@/styles/components/card.scss';
 
 - `DATABASE_URL` - PostgreSQL connection string
 - `BETTER_AUTH_SECRET` - BetterAuth secret key (min 32 chars)
-- `BETTER_AUTH_URL` - App URL for BetterAuth (e.g. http://localhost:4321)
+- `BETTER_AUTH_URL` - App URL for BetterAuth (e.g. <http://localhost:4321>)
 - `OPENAI_API_KEY` - OpenAI API key (for AI features)
 
 **Setup:** Copy `.env.example` to `.env` and fill in values
