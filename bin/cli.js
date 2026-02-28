@@ -181,10 +181,6 @@ export default defineConfig({
     },
     integrations: [
 ${integrationCalls}
-        clerk({
-            afterSignInUrl: '/',
-            afterSignUpUrl: '/',
-        }),
     ],
     vite: {
         plugins: [
@@ -256,10 +252,6 @@ export default defineConfig({
     adapter: netlify(),
     integrations: [
 ${integrationCalls}
-        clerk({
-            afterSignInUrl: '/',
-            afterSignUpUrl: '/',
-        }),
     ],
     vite: {
         plugins: [
@@ -331,10 +323,6 @@ export default defineConfig({
     adapter: cloudflare(),
     integrations: [
 ${integrationCalls}
-        clerk({
-            afterSignInUrl: '/',
-            afterSignUpUrl: '/',
-        }),
     ],
     vite: {
         plugins: [
@@ -408,10 +396,6 @@ export default defineConfig({
     }),
     integrations: [
 ${integrationCalls}
-        clerk({
-            afterSignInUrl: '/',
-            afterSignUpUrl: '/',
-        }),
     ],
     vite: {
         plugins: [
@@ -481,10 +465,6 @@ export default defineConfig({
     output: 'static',
     integrations: [
 ${integrationCalls}
-        clerk({
-            afterSignInUrl: '/',
-            afterSignUpUrl: '/',
-        }),
     ],
     vite: {
         plugins: [
@@ -772,7 +752,7 @@ async function createProject(projectName, options = {}) {
         console.log('\nDocumentation:');
         console.log(`  • Astro: ${colors.cyan}https://astro.build${colors.reset}`);
         console.log(`  • Drizzle ORM: ${colors.cyan}https://orm.drizzle.team${colors.reset}`);
-        console.log(`  • Clerk: ${colors.cyan}https://clerk.com/docs${colors.reset}`);
+        console.log(`  • BetterAuth: ${colors.cyan}https://betterauth.dev/docs${colors.reset}`);
         console.log(`  • Vercel AI SDK: ${colors.cyan}https://sdk.vercel.ai${colors.reset}`);
         console.log(`  • Exa Search: ${colors.cyan}https://docs.exa.ai${colors.reset}`);
 
@@ -968,7 +948,7 @@ ${colors.bright}${colors.green}TECHNOLOGY STACK${colors.reset}
     ${colors.cyan}• NanoID${colors.reset}            - Secure unique ID generation for records
 
     ${colors.bright}Authentication:${colors.reset}
-    ${colors.cyan}• Clerk${colors.reset}             - Complete user management and authentication
+    ${colors.cyan}• BetterAuth${colors.reset}        - Complete user management and authentication
                        Includes social logins, 2FA, user profiles
 
     ${colors.bright}Styling:${colors.reset}
