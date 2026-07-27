@@ -33,7 +33,7 @@ We welcome feature requests! Please create an issue with:
 1. **Fork the repository**
 
    ```bash
-   git clone https://github.com/yourusername/atsdc-stack.git
+   git clone https://github.com/adarshrkumar/the-atsdc-stack.git
    cd atsdc-stack
    ```
 
