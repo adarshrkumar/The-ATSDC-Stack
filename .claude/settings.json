@@ -1,8 +1,7 @@
 {
   "permissions": {
     "deny": [
-      "Edit(.claude/**)",
-      "NotebookEdit(.claude/**)"
+      "Edit(.claude/**)"
     ],
     "ask": [
       "Bash(cp -r *)"
