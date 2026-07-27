@@ -1,12 +1,17 @@
 {
   "permissions": {
+    "deny": [
+      "Edit(.claude/**)",
+      "NotebookEdit(.claude/**)"
+    ],
     "allow": [
       "Bash(node -e:*)",
       "Bash(git mv:*)",
       "Bash(git add:*)",
       "Bash(test:*)",
       "Bash(npm install:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Edit()"
     ]
   }
 }
