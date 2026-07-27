@@ -4,6 +4,9 @@
       "Edit(.claude/**)",
       "NotebookEdit(.claude/**)"
     ],
+    "ask": [
+      "Bash(cp -r *)"
+    ],
     "allow": [
       "Bash(node -e:*)",
       "Bash(git mv:*)",
