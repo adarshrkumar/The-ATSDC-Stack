@@ -13,6 +13,8 @@
       "mcp__ide__getDiagnostics",
       "Bash(npm --version)",
       "Bash(npm version *)",
+      "Bash(npm install)",
+      "Bash(npm i)",
       "Edit(*)"
     ]
   }
