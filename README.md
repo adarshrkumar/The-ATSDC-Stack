@@ -53,7 +53,7 @@ The CLI will interactively prompt you for any options you don't provide:
 
 ```bash
 # Clone this repository
-git clone https://github.com/yourusername/atsdc-stack.git my-app
+git clone https://github.com/adarshrkumar/the-atsdc-stack.git my-app
 cd my-app
 
 # Install dependencies
