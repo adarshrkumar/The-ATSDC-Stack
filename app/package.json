@@ -28,7 +28,6 @@
         "@astrojs/react": "^4.4.2",
         "@astrojs/vercel": "^9.0.2",
         "@neondatabase/serverless": "^0.10.4",
-        "@rocicorp/zero": "^0.2.0",
         "better-auth": "^1.2.7",
         "ai": "^5.0.0",
         "astro": "^5.16.6",

@@ -14,7 +14,6 @@ The **ATSDC Stack** is a carefully curated combination of modern web technologie
 
 ### Additional Technologies
 
-- **Zero** - Local-first sync engine for real-time data synchronization
 - **Zod** - TypeScript-first schema validation with runtime type safety
 - **Vercel AI SDK** - Seamless integration with AI language models
 - **NanoID** - Secure, URL-friendly unique identifiers for database records
@@ -393,7 +392,6 @@ Set these in your Vercel project settings:
 - [Astro Documentation](https://docs.astro.build)
 - [Drizzle ORM Documentation](https://orm.drizzle.team/docs)
 - [BetterAuth Documentation](https://betterauth.dev/docs)
-- [Zero Sync Documentation](https://zero.rocicorp.dev)
 - [Zod Documentation](https://zod.dev)
 - [Vercel AI SDK Documentation](https://sdk.vercel.ai/docs)
 
@@ -421,11 +419,10 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 1. **Type Safety** - TypeScript + Drizzle + Zod ensure type safety from database to frontend
 2. **Performance** - Astro's zero-JS by default approach for maximum performance
-3. **Real-time Sync** - Zero provides local-first data synchronization for responsive UIs
-4. **Developer Experience** - Modern tooling with excellent IDE support and automated setup
-5. **Scalability** - PostgreSQL + serverless architecture scales effortlessly
-6. **Security** - BetterAuth handles authentication, Zod validates inputs
-7. **AI-Ready** - Vercel AI SDK integration for modern AI features
-8. **PWA Support** - Offline-first capabilities with Vite PWA
-9. **Clean Architecture** - Enforced separation of concerns, especially for styles
-10. **Quick Start** - Automated environment setup and database initialization
+3. **Developer Experience** - Modern tooling with excellent IDE support and automated setup
+4. **Scalability** - PostgreSQL + serverless architecture scales effortlessly
+5. **Security** - BetterAuth handles authentication, Zod validates inputs
+6. **AI-Ready** - Vercel AI SDK integration for modern AI features
+7. **PWA Support** - Offline-first capabilities with Vite PWA
+8. **Clean Architecture** - Enforced separation of concerns, especially for styles
+9. **Quick Start** - Automated environment setup and database initialization
